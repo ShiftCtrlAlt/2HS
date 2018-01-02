@@ -96,7 +96,7 @@ public class IndexController extends BaseController{
 	
 	@PostMapping("/upload")
 	public String add(MultipartHttpServletRequest request,TaskDto taskDto) {
-		taskService.save(request,taskDto);
+		taskService.save(request,taskDto,getCurrentUser());
 		return "redirect:/";
 	}
 	

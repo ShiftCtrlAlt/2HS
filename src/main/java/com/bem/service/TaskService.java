@@ -37,7 +37,7 @@ public class TaskService {
 	public void save(MultipartFile file,ArrayList<String> list) {
 		String mFileName = new Date().getTime() + file.getOriginalFilename();	// 文件名
 		System.out.println(mFileName);// 储存缓存文件地址
-		String Path ="d:/images/";
+		String Path =Class.class.getClass().getResource("/").getPath() + "static/images/user/";;
 		File mfile = new File(Path);// 创建文件夹
 		if (!mfile.isDirectory()) {
 			mfile.mkdir();
@@ -55,7 +55,7 @@ public class TaskService {
 		}
 		list.add(mFileName);
 	}
-	public void save(MultipartHttpServletRequest request,TaskDto taskDto){
+	public void save(MultipartHttpServletRequest request,TaskDto taskDto,User user){
 		Task task = new Task();
 		ArrayList<String> list = new ArrayList();
 		BeanUtils.copyProperties(taskDto,task);
@@ -64,6 +64,7 @@ public class TaskService {
 		}
 		task.setClassify(classifyRepository.findOneById(taskDto.getClassify()));
 		task.setList_img(list);
+		task.setUser_id(user.getId());
 		taskRepository.save(task);
 	}
 	

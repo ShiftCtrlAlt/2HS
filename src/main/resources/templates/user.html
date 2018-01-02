@@ -54,7 +54,7 @@
       <a th:href="@{/myrelease}" class="mdl-layout__tab">我的发布</a>                                     <!-- href="#user_panel_myrelease" -->
       <a th:href="@{/mycollect}" class="mdl-layout__tab">我的收藏</a>                                     <!-- href="#user_panel_mylike" -->
       <!-- <a th:href="@{/}" class="mdl-layout__tab">消息</a>  -->                          <!-- href="#user_panel_chat" -->
-      <a th:href="@{/}" class="mdl-layout__tab">认证</a>                                         <!-- href="#user_panel_attest" -->
+      <a  class="mdl-layout__tab">认证</a>                                         <!-- href="#user_panel_attest" -->
       <!-- <a th:href="@{/}" class="mdl-layout__tab">设置</a>  -->                                        <!-- href="#user_panel_setting" -->
     </div>
     <!--<div class="entrance">
@@ -86,7 +86,7 @@
       <nav class="mdl-navigation">
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link active" th:href="@{/}"><i class="material-icons">home</i>首页</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/myrelease}"><i class="material-icons">shopping_cart</i>我的发布</a>
-        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">forum</i>消息</a>
+        <!-- <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">forum</i>消息</a> -->
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/mycollect}"><i class="material-icons">star</i>我的收藏</a>
         <div class="mdl-navigation__link-line"></div>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">person</i>个人中心</a>
@@ -106,10 +106,10 @@
                   <i class="material-icons">more_vert</i>
                 </button>
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="myProfile-menu1">
-                  <li class="mdl-menu__item">修改</li>
+                  <li class="mdl-menu__item myProfile_one_modify">修改</li>
                 </ul>
               </div><!--card-header end-->
-              <div class="card-body">
+              <div class="card-body card-one">
                 <p>
                   <label>Q Q：</label>
                   <span th:text="${user.qq}">820731799</span>
@@ -123,6 +123,31 @@
                   <span th:text="${user.email}">820731799@qq.com</span>
                 </p>
               </div><!--card-body end-->
+              
+              
+				<div class="card-body card-body-one card-from">
+                <form action="/user/update" mothod="post">
+                   <div>
+                    <p>Q Q：</p>
+                    <input class="mdl-textfield__input"  name='qq' type="text" >
+                  </div>
+                  </br></br>
+                  <div>
+                    <p>手机：</p>
+                    <input class="mdl-textfield__input"  name='phone' type="text" >
+                  </div>
+                </br></br>
+                  <div>
+                    <p>邮箱：</p>
+                    <input class="mdl-textfield__input" name='email' type="text">
+                  </div>
+                  </br></br>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored pull-right">
+                      修改
+                  </button>
+                </form>
+              </div>
+              
             </div><!--mdl-6-col end-->
             <div class="mdl-card mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-shadow--2dp mdl-cell--top myProfile-card">
               <div class="card-header">
@@ -131,10 +156,10 @@
                   <i class="material-icons">more_vert</i>
                 </button>
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="myProfile-menu2">
-                  <li class="mdl-menu__item">修改</li>
+                  <li class="mdl-menu__item myProfile_two_modify">修改</li>
                 </ul>
               </div><!--card-header end-->
-              <div class="card-body">
+              <div class="card-body card-two">
                 <p>
                   <label>认证：</label>
                   <span>已认证</span>
@@ -152,12 +177,33 @@
                   <span th:text="${user.signature}">热爱学习，学习使我快乐；热爱生活，生活充满激情。</span>
                 </p>
               </div><!--card-body end-->
+              
+              <div class="card-body card-body-two card-from">
+                <form action="/user/update/two" mothod="post">
+                  <p>
+                    <p>用户名：</p>
+                    <input class="mdl-textfield__input" name='name' type="text" >
+                  </p>
+                </br></br>
+                   <p>
+                    <p>宣言：</p>
+                    <input class="mdl-textfield__input" name='signature' type="text">
+                  </p>
+                  </br></br>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored pull-right">
+                      修改
+                  </button>
+                </form>
+              </div>
+              
             </div><!--mdl-6-col end-->
           </div><!--mdl-grid end-->
         </div><!--container end-->
         <!-- <div style="height: 1000px;"></div> -->
       </div>
     </section>
+    
+    
     <section class="mdl-layout__tab-panel" id="user_panel_myrelease">
       <div class="page-content"><!-- Your user_panel_myrelease goes here --></div>
     </section>

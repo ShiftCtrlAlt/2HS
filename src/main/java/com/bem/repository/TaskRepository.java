@@ -86,6 +86,23 @@ public class TaskRepository extends BaseRepository<Task> {
 			throw e;
 		}
 	}
+	/**
+	 * 通过userID查找Task
+	 * @param userId
+	 * @return MyPage<Task>
+	 */
+	public MyPage<Task> findByPageId(String userId,int page){
+		log.debug("find  MyPage<Task> By userID");
+		try {
+			DetachedCriteria dc = DetachedCriteria.forClass(Task.class);
+			dc.add(Property.forName("user_id").eq(userId));
+			log.debug("find  MyPage<Task> By userID successfull");
+			return findPageByCriteria(dc,page);
+		} catch (RuntimeException e) {
+			log.error("find  MyPage<Task> By userID error",e);
+			throw e;
+		}
+	}
 	
 	
 	/**

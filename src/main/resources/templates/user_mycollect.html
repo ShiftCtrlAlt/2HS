@@ -54,7 +54,7 @@
       <a th:href="@{/myrelease}" class="mdl-layout__tab">我的发布</a>                                     <!-- href="#user_panel_myrelease" -->
       <a th:href="@{/mycollect}" class="mdl-layout__tab is-active">我的收藏</a>                                     <!-- href="#user_panel_mylike" -->
       <!-- <a th:href="@{/}" class="mdl-layout__tab">消息</a>  -->                          <!-- href="#user_panel_chat" -->
-      <a th:href="@{/}" class="mdl-layout__tab">认证</a>                                         <!-- href="#user_panel_attest" -->
+      <a class="mdl-layout__tab">认证</a>                                         <!-- href="#user_panel_attest" -->
       <!-- <a th:href="@{/}" class="mdl-layout__tab">设置</a> -->                                         <!-- href="#user_panel_setting" -->
     </div>
     <!--<div class="entrance">
@@ -86,7 +86,7 @@
       <nav class="mdl-navigation">
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link active" th:href="@{/}"><i class="material-icons">home</i>首页</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/myrelease}"><i class="material-icons">shopping_cart</i>我的发布</a>
-        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">forum</i>消息</a>
+        <!-- <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">forum</i>消息</a> -->
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/mycollect}"><i class="material-icons">star</i>我的收藏</a>
         <div class="mdl-navigation__link-line"></div>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">person</i>个人中心</a>
@@ -120,7 +120,7 @@
                 
                 <li class="list-item" th:each="item:${pages.items}">
                   <a href="">
-                    <div class="list-item-avatar"><img th:src="@{/}" alt=""></div>
+                    <div class="list-item-avatar"><img th:src="@{'/images/user/'+${item.list_img[0]}}" alt=""></div>
                     <div class="list-item-content">
                       <p class="item-title" th:text="${item.title}">Bob Odenkirk</p>
                       <p class="item-sub-title" th:text="${item.content}">聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容</p>
@@ -136,9 +136,10 @@
 	                <li class="mdl-button mdl-js-button mdl-js-ripple-effect" disabled>
 	                  <a href="javascript:void(0);"><i class="material-icons">keyboard_arrow_left</i></a>
 	                </li>
-	                <li th:each="page:${pages.pages}" class="mdl-button mdl-js-button mdl-js-ripple-effect active">
-	                  <a href="#" th:text="${page}">1</a>
+	                <a th:each="page:${pages.pages}" th:href="@{'/mycollect/'+${page}}" >
+	                <li  class="mdl-button mdl-js-button mdl-js-ripple-effect active" th:text="${page}">
 	                </li>
+	                </a>
 	                <li class="mdl-button mdl-js-button mdl-js-ripple-effect">
 	                  <a href="javascript:void(0);">
 	                    <i class="material-icons">keyboard_arrow_right</i>

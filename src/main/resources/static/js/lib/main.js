@@ -25,6 +25,35 @@ $("[name='switch-status-more']").on("click", function(){      //快捷入口
   }
 });
 
+
+
+$(document).on("click", ".myProfile_one_modify", function(){
+  $(".card-one").animate({ opacity:0}, 200,function(){
+     $(".card-one").css("display","none");
+     $(".card-body-one").animate({ 
+      opacity:1
+    }, 100,function(){
+     $(".card-body-one").css("display","block");
+    });
+  });
+  
+})
+
+$(document).on("click", ".myProfile_two_modify", function(){
+  $(".card-two").animate({ opacity:0}, 200,function(){
+     $(".card-two").css("display","none");
+     $(".card-body-two").animate({ 
+      opacity:1
+    }, 100,function(){
+     $(".card-body-two").css("display","block");
+    });
+  });
+  
+})
+
+
+
+
 $(document).on("click", "#login_btn, #register_btn", function(){    //登录、注册或忘记密码按钮  #forget_btn
   var mark = $(this).next(".switch_mark");
   mark.addClass("is-active");    //全屏涟漪

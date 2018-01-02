@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class MultipartFileMove {
 	//文件存储地址
-	private final String FILE_ADDRESS = Class.class.getClass().getResource("/").getPath() + "static/images/";;
+	private final String FILE_ADDRESS = Class.class.getClass().getResource("/").getPath() + "static/images/";
 	//文件大小
 	private long FILE_SIZE_MAX =3 * 1024 *1024 ;
 	//错误提示

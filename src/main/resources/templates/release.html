@@ -53,7 +53,7 @@
       <a href="#scroll-tab-6" class="mdl-layout__tab">分类 5</a> -->
     </div>
     <div class="entrance m1140_entrance">
-      <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp home-button" href="index.html">
+      <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp home-button" href="/">
         <i class="material-icons">arrow_back</i>
       </a>
     </div>
@@ -82,7 +82,7 @@
       <nav class="mdl-navigation">
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link active" th:href="@{/}"><i class="material-icons">home</i>首页</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/myrelease}"><i class="material-icons">shopping_cart</i>我的发布</a>
-        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">forum</i>消息</a>
+<!--         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">forum</i>消息</a> -->
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/mycollect}"><i class="material-icons">star</i>我的收藏</a>
         <div class="mdl-navigation__link-line"></div>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" th:href="@{/user}"><i class="material-icons">person</i>个人中心</a>
@@ -106,8 +106,7 @@
       <div class="form_body">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
           <i class="material-icons icons">label</i>
-          <input class="mdl-textfield__input" name="title" value="123123"  type="text" id="res_name">
-          <input class="mdl-textfield__input" name="title" value="123123"  type="hidden" >
+          <input class="mdl-textfield__input" name="title"   type="text" id="res_name">
           <label class="mdl-textfield__label" for="res_name">名称：</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
@@ -167,8 +166,9 @@
     $("#dropzone").dropzone({
       url: "/upload",
       method:"post",
-      maxFiles: 10,
-      maxFilesize: 5,
+      maxFiles: 5,
+      maxFilesize: 2,
+      parallelUploads:5,
       maxThumbnailFilesize:5,
       autoProcessQueue:false,
       acceptedFiles:".jpg,.png",
@@ -193,8 +193,12 @@
         	  formData.append('address',$("#res_place").val());
         	  formData.append('qq',$("#res_way").val());
         	  formData.append('classify',$("#res_classify").val());
-          })
+          });
           
+          this.on("maxfilesreached",function(){
+        	 	alert("最多上传五张图片！");
+          
+          });
           
           
           $("#submit").on("click",function(){

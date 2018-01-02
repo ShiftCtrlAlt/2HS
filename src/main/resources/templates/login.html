@@ -44,7 +44,7 @@
   <main class="mdl-grid">
     <div class="login-content mdl-color--white mdl-shadow--2dp content mdl-color-text--grey-800 mdl-cell mdl-cell--3-col">
       <form action="#" method="post" th:action="@{/login}" name="login_form">
-        <div class="form_title">Login</div>
+        <div class="form_title">登录</div>
         <div class="full mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="text" name="username" />
           <label class="mdl-textfield__label" for="username">用户名或邮箱</label>
@@ -62,7 +62,7 @@
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect login-btn" type="submit">登录</button>
       </form>
       <form th:action="@{/registration}" method="post" name="register_form">
-        <div class="form_title">Register</div>
+        <div class="form_title">注册</div>
         <div class="full mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="text" name="accountid" pattern="^\w+$"/>
           <label class="mdl-textfield__label" for="accountid">用户名（唯一且无法修改）</label>

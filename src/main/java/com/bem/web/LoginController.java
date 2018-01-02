@@ -32,7 +32,7 @@ import com.bem.service.UserService;
 
 
 @Controller
-public class LoginController{
+public class LoginController { 
 	@Resource
 	private UserService userService;
 	@Resource
@@ -43,14 +43,16 @@ public class LoginController{
 		return "login";
 	}
 	
-	@PostMapping("/registration")
-	public @ResponseBody Map<String, Object> createNewUser(@Valid UserRegDto user) {
+	@ResponseBody
+	@RequestMapping("/registration")
+	public Map<String, Object> createNewUser(@Valid UserRegDto user) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		LocalAuth localAuth = userService.findUserByAccount(user.getAccountid());
 		if (localAuth != null) {
 			map.put("data", "userExists");
 			return map;
 		}
+		System.err.println("--------------------------error");
 		userService.saveUser(user);
 		map.put("data", "success");
 		return map;

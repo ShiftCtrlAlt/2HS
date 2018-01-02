@@ -35,16 +35,16 @@
         <li class="mdl-menu__item">其他操作</li>
       </ul>
     </div>
-     <div class="mdl-header-bar">
+    <div class="mdl-header-bar">
       <h2 class="title">我们为需要帮助的人整理归纳信息</h2>
       <p class="sm-title">Created with by the fine folks at BEM</p>
     </div>
     <!-- Tabs -->
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+    <!-- <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
       <a href="/" class="mdl-layout__tab is-active">全部</a>
       <a href="#scroll-tab-2" th:each="classify : ${clist}" class="mdl-layout__tab" th:href="@{'/classify/' + ${classify.id} }" th:text="${classify.name}">分类 1</a>
     </div>
-     <div class="entrance">
+    <div class="entrance">
       <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp home-button" href="/release">
         <i class="material-icons">add</i>
       </a>
@@ -52,7 +52,7 @@
     <div class="mdl-layout__header-bg" style="background: url(../static/images/icon-seamless.png)"></div>
     <div class="mdl-js-button mdl-js-ripple-effect mdl-layout__drawer-button menu-button">
       <i class="material-icons">menu</i>
-    </div>
+    </div> -->
   </header>
   <div class="mdl-layout__drawer">    <!--Left slip-->
     <div class="userCenter">
@@ -84,43 +84,24 @@
   </div>
   <main class="mdl-layout__content">
     <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
-      <div class="page-content"><!-- Your scroll-tab-1 goes here -->
-        <div class="container">
-          <div class="mdl-grid">
-          <!-- ${Mypage.totalcount} != null ? -->
-            <div  th:each="item:${Mypage.items}" class="mdl-card mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell--stretch mdl-shadow--2dp card-hoverable portfolio-card">
-              <div class="mdl-card__media" >
-                <a th:herf="@{/}" class="mdl-js-button mdl-js-ripple-effect mdl-button--accent">
-                  <img class="article-image" th:src="@{'/images/user/'+${item.list_img[0]}}" alt="">
-                </a>
-              </div>
-              <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text" th:text="${item.title}">《Git版本控制管理》</h2>
-              </div>
-              <div class="mdl-card__supporting-text" th:text="${item.content}">教学楼415，git课专用，笔记全有，妈妈再也不用担心我挂科</div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--sm" th:href="@{'/task_detail/'+${item.id}}">更多</a>
-              </div>
-            </div>	
+      <div class='tab-left'>
+            <img th:each="item:${task.list_img}" th:src="@{'/images/user/'+${item}}" alt="">
 
-            <div class="mdl-cell mdl-cell--12-col">
-              <ul class="pagination">
-                <li class="mdl-button mdl-js-button mdl-js-ripple-effect" disabled>
-                  <a href="javascript:void(0);"><i class="material-icons">keyboard_arrow_left</i></a>
-                </li>
-                <li th:each="page:${Mypage.pages}" class="mdl-button mdl-js-button mdl-js-ripple-effect active">
-                  <a href="#" th:text="${page}">1</a>
-                </li>
-                <li class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                  <a href="javascript:void(0);">
-                    <i class="material-icons">keyboard_arrow_right</i>
-                  </a>
-                </li>
-              </ul>
+        </div>
+        <div class='tab-right'>
+
+            <div class='top'>
+              <p class='m-title' th:text="${task.title}">我的世界书籍</p>
+              <p class='content' th:text="${task.content}">我的世界书籍我的世界书籍我的世界书籍我的世界书籍我的世界书籍</p>
+              <p class='stit'><span class='tit'>价&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp格</span><span>520</span><span>元</span></p>
+              <p class='stit'><span class='tit'>地&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp址</span><span th:text="${task.address}">12312311</span></p>
+              <p class='stit'><span class='tit'>企&nbsp&nbsp鹅&nbsp号</span><span th:text="${task.qq}">12312311</span></p>
+              <!-- <p class='stit'><span class='tit'>联系电话</span><span th:text="${task.phone}">12312311</span></p> -->
+              <p class='stit'><span class='tit'>发布时间</span><span th:text="${task.release_time}">12312311</span></p>
+              <p class='btit'><span class="btn">收藏</span><span class="btn">举报</span></p>
             </div>
-          </div><!--mdl-grid end-->
-        </div><!--container end-->
-      </div>
+            <!-- <div class='down'></div> -->
+        </div>
     </section>
     <section class="mdl-layout__tab-panel" id="scroll-tab-2">
       <div class="page-content"><!-- Your scroll-tab-2 goes here --></div>

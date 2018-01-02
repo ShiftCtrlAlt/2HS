@@ -8,13 +8,10 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
-import org.hibernate.Session;
 import org.springframework.stereotype.Component;
 
 import com.bem.domain.LocalAuth;
 import com.bem.domain.User;
-import com.fasterxml.jackson.databind.deser.Deserializers.Base;
-import com.mysql.jdbc.log.Log;
 
 @Component
 @Transactional

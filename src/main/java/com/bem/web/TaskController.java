@@ -30,15 +30,22 @@ public class TaskController extends BaseController{
 	private TaskService taskService;
 	
 	
+//	@RequestMapping("/task_detail/{id}")
+//	public String index(Model model,@PathVariable String id){
+//		Task task= taskService.findById(id);
+//		List<Review> list = reviewService.findAll(id);
+//		User user = getCurrentUser();
+//		model.addAttribute("user",user);
+//		model.addAttribute("list",list);
+//		model.addAttribute("task",task);
+//		return "detail";
+//	}
+
 	@RequestMapping("/task_detail/{id}")
 	public String index(Model model,@PathVariable String id){
 		Task task= taskService.findById(id);
-		List<Review> list = reviewService.findAll(id);
-		User user = getCurrentUser();
-		model.addAttribute("user",user);
-		model.addAttribute("list",list);
 		model.addAttribute("task",task);
-		return "commodity";
+		return "detail";
 	}
 	
 	/*@ResponseBody

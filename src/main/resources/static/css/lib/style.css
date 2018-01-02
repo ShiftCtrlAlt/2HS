@@ -1,8 +1,8 @@
 /*base*/
 *, *:active, *:hover { outline: medium none !important;}
 a,img,button,input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-appearance:none;}
-/*input,textarea{-webkit-appearance:none;}*/   /*去掉textarea,input的默认样式  IOS上的圆角及内阴影等*/
-body {margin: 0; color: #5e5e5e; font-family: "微软雅黑",宋体,roboto,Arial; font-size: 13px; font-weight: 400; line-height: 1.42857; background-color: #fafafa;}
+/*input,textarea{-webkit-appearance:none;}*/   /*鍘绘帀textarea,input鐨勯粯璁ゆ牱寮�  IOS涓婄殑鍦嗚鍙婂唴闃村奖绛�*/
+body {margin: 0; color: #5e5e5e; font-family: "寰蒋闆呴粦",瀹嬩綋,roboto,Arial; font-size: 13px; font-weight: 400; line-height: 1.42857; background-color: #fafafa;}
 a{text-decoration: none;}
 ul{list-style: none; padding: 0; margin: 0;}
 img{border:0;}
@@ -126,6 +126,9 @@ img{border:0;}
 	bottom: -50px;
 	width: auto;
 }
+
+
+
 .top-logo{
 	text-align: center;
 	position: absolute;
@@ -558,6 +561,7 @@ img.article-image {
     padding: 0;
     width: 40px;
     margin: 0 4px;
+    color: #fff!important;
 }
 .pagination li a{
     display: block;
@@ -567,7 +571,7 @@ img.article-image {
     background: rgb(76,175,80);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
-.pagination li.active a{color: #fff;}
+.pagination ..mdl-button{color: #fff!important;}
 @media (max-width: 585px) {
     .pagination{margin: 25px 0 0;}
     .pagination li{
@@ -780,7 +784,7 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     .popUps_box .form_body .mdl-textfield i.icons, .popUps_box .form_body .mdl-selectfield i.icons{margin: 0 0 0 -36px;}
     .popUps_box .form_submit{width: 100%;}
     .release_header .mdl-layout__header-row:before{
-        content: "发布资源";
+        content: "鍙戝竷璧勬簮";
         font-size: 16px;
         color: #fff;
         position: absolute;
@@ -814,7 +818,7 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     background: #f7f7f7;
 }
 .myProfile-card .card-header span{
-    font-family: "微软雅黑";
+    font-family: "寰蒋闆呴粦";
     font-size: 16px;
 }
 .myProfile-card .card-header h5{margin: 16px 0;}
@@ -891,7 +895,7 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
 .mdl-header-userbar .userinfo{margin: 0 0 0 24px;}
 .mdl-header-userbar .userinfo .name{
     font-weight: 100;
-    font-family: "微软雅黑";
+    font-family: "寰蒋闆呴粦";
     margin: 0 0 16px;
     height: 40px;
 }
@@ -1426,4 +1430,60 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
 }
 .user_cargo_list-main{
     
+}
+
+
+.card-from{display: none;}
+.card-from p{display: initial!important;}
+.card-from input{display: inline-block;width: 80%;vertica-align:top!important;}
+.mdl-button--colored{color:#fff!important;}
+
+.tab-left{
+    width: 50%;
+    margin: 2% 0 0 5%;
+    background-color: #fff;
+    padding: 2% 2% 5% 2%;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.tab-left img{vertical-align: middle;width: 100%;margin-bottom: 2%;}
+.tab-right{
+   width: 37%;
+   margin:2% 0 0 1%;
+   display: inline-block;
+    vertical-align: top;
+}
+.tab-right .top{
+    width: 100%;
+    margin-bottom: 5%;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    background-color: #fff;
+    /* height: 500px; */
+    padding-bottom: 8%;
+    padding-left: 5%;
+}
+.tab-right .top .m-title{    
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 25px;
+}
+.tab-right .top .tit{
+    font-weight: bold;
+    margin-right:5px;
+    }
+.tab-right .top .stit{
+        margin: 0 0 10px;
+}
+.tab-right .top .btn{
+    display: inline-block;
+    margin-left: 20px;
+}
+.tab-right .top .btit{text-align: right;margin-right: 5%;}
+.tab-right .down{
+    width: 50%;
+    margin-bottom: 5%;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    background-color: #fff;
+   height: 250px;
 }
